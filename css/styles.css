@@ -1,3 +1,12 @@
+:root {
+    --bg: #000000;
+    --white: #ffffff;
+    --gray: #a1a1aa;
+    --txt: #dfdfdf;
+    --line: #2b2b2b;
+    --primary: #4287f5;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,9 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #000000;
+    background-color: var(--bg);
 
-    color: #ffffff;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -27,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
 
-    border-bottom: 1px solid #2b2b2b;
+    border-bottom: 1px solid var(--line);
     padding-bottom: 8px;
 }
 
@@ -41,7 +49,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .menu {
@@ -51,13 +59,13 @@ body {
 
 .menu .item a{
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
     font-size: 13.5px;
     transition: 0.2s;
 }
 
 .menu .item a:hover {
-    color: rgb(0, 162, 255);
+    color: var(--primary);
 }
 
 .item a {
@@ -67,17 +75,16 @@ body {
 .links {
     display: flex;
     list-style: none;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
 }
 
 .social-link {
-    fill: #A1A1AA;
+    fill: var(--gray);
     transition: 0.2s;
 }
 
 .item a:hover > .social-link {
-    fill: rgb(0, 162, 255);
+    fill: var(--primary);
 }
 
 .intro {
@@ -94,20 +101,19 @@ body {
 
 .title {
     font-size: 17px;
-    color: #ffffff;
+    color: var(--white);
     font-weight: bold;
     margin-bottom: 8px;
 }
 
 .about {
     margin-top: 30px;
-    border-bottom: 1px solid #2b2b2b;
+    border-bottom: 1px solid var(--line);
     padding-bottom: 8px;
 }
 
 .about-txt {
     font-size: 13.5px;
-    color: f8f8f8;
     line-height: 1.4;
-    color: #dfdfdf;
+    color: var(--txt);
 }
