@@ -5,7 +5,6 @@
         "about": "Fictitious game store app made with React Native (Typescript)",
         "type": ["Mobile"],
         "image": "images/projects/gamestore.png",
-        "fit": true,
         "link": "https://github.com/rodcabral/gamestore"
     },
     {
@@ -14,7 +13,6 @@
         "about": "Visualization of different sorting algorithms made using only C and SDL2",
         "type": ["Systems"],
         "image": "images/projects/sort.png",
-        "fit": false,
         "link": "https://github.com/rodcabral/sort/"
     }
 ]
