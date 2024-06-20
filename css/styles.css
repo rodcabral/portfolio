@@ -1,8 +1,9 @@
 :root {
-    --bg: #000000;
+    /* --bg: #000000; */
+    --bg: rgb(17, 16, 16);
     --white: #ffffff;
     --gray: #a1a1aa;
-    --txt: #dfdfdf;
+    --txt: #D4D4D4;
     --line: #2b2b2b;
     --primary: #4287f5;
 }
@@ -22,7 +23,7 @@ body {
     align-items: center;
     background-color: var(--bg);
 
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -88,7 +89,7 @@ body {
 }
 
 .intro {
-    margin-top: 30px;
+    margin-top: 32px;
     width: 100%;
     height: 200px;
     border-radius: 10px;
@@ -107,19 +108,19 @@ body {
 }
 
 .about {
-    margin-top: 30px;
+    margin-top: 32px;
     border-bottom: 1px solid var(--line);
     padding-bottom: 8px;
 }
 
 .about-txt {
-    font-size: 13.5px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 22px;
     color: var(--txt);
 }
 
 .projects {
-    margin-top: 30px;
+    margin-top: 32px;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--line);
@@ -152,25 +153,25 @@ body {
 }
 
 .general {
-    background-image: url(../images/04.jpg);
+    background-image: url("../images/04.jpg");
 }
 
 .backend-frontend {
-    background-image: url(../images/03.png);
+    background-image: url("../images/03.png");
 }
 
 .machine-learning {
-    background-image: url(../images/02.jpg)
+    background-image: url("../images/02.jpg");
 }
 
 .graphics {
-    background-image: url(../images/01.jpg);
+    background-image: url("../images/01.jpg");
 }
 
 .type::after {
     content: '';
     position: absolute;
-    background-color: #00000080;
+    background-color: #0000008f;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -181,6 +182,7 @@ body {
     color: var(--white);
     font-size: 15px;
     font-weight: bold;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
 }
 
 .selected {
@@ -189,7 +191,7 @@ body {
 
 .projects-list {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 32px;
 
     display: grid;
     grid-template-columns: repeat(3, minmax(120px, 1fr));
@@ -200,7 +202,7 @@ body {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 5px;
 }
 
 .project img {
@@ -211,18 +213,18 @@ body {
 }
 
 .project-type {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--gray);
 }
 
 .project-title {
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: bold;
     color: var(--white);
 }
 
 .project-about {
-    font-size: 11px;
+    font-size: 11.4px;
     color: var(--gray);
     line-height: 16px;
 }
@@ -232,7 +234,7 @@ footer {
     width: 100%;
 
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 footer .copyright {

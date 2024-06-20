@@ -1,11 +1,19 @@
 const projects_list = document.querySelector(".projects-list");
+const general = document.querySelector(".general");
+const backend_frontend = document.querySelector(".backend-frontend");
+const machine_learning = document.querySelector(".machine-learning");
+const graphics = document.querySelector(".graphics");
 
-async function render_projects() {
+async function render_projects(find) {
     const projects = await fetch("./src/projects.json").then((res) => {
         return res.json();
     })
 
-    projects.map((p) => {
+    if(find == undefined) {
+        find = "General"
+    }
+
+    projects.filter((p) => p.type.includes(find)).map((p) => {
         const li = document.createElement("li");
         li.classList.add("project");
 
@@ -35,6 +43,40 @@ async function render_projects() {
 
         projects_list.appendChild(li);
     })
+
 }
 
-render_projects();
+function clear_render() {
+    projects_list.innerHTML = "";
+    general.classList.remove("selected");
+    backend_frontend.classList.remove("selected");
+    machine_learning.classList.remove("selected");
+    graphics.classList.remove("selected");
+
+}
+
+general.addEventListener("click", () => {
+    clear_render();
+    general.classList.add("selected");
+    render_projects("General");
+});
+
+backend_frontend.addEventListener("click", () => {
+    clear_render();
+    backend_frontend.classList.add("selected");
+    render_projects("General");
+});
+
+machine_learning.addEventListener("click", () => {
+    clear_render();
+    machine_learning.classList.add("selected");
+    render_projects("Machine Learning");
+});
+
+graphics.addEventListener("click", () => {
+    clear_render();
+    graphics.classList.add("selected");
+    render_projects("Graphics");
+});
+
+render_projects("General");
