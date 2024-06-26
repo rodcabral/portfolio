@@ -1,5 +1,6 @@
 :root {
-    --bg: rgb(17, 16, 16);
+    /* --bg: rgb(17, 16, 16); */
+    --bg: rgb(12, 11, 11);
     --white: #ffffff;
     --gray: #a1a1aa;
     --txt: #D4D4D4;
