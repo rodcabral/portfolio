@@ -197,7 +197,7 @@ body {
     margin-top: 32px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
@@ -267,12 +267,19 @@ footer .copyright {
     .container {
         padding: 13px;
     }
+    
     .about-txt {
         font-size: 13px;
     }
 
     .projects-list {
-        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .project {
+        width: 300px;
     }
 
     .type p{
@@ -281,5 +288,15 @@ footer .copyright {
 
     .projects {
         min-height: 600px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .projects-list {
+        justify-content: center;
+    }
+    .project {
+        width: 100%;
+        min-height: 210px;
     }
 }
