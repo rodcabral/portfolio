@@ -184,6 +184,8 @@ body {
     font-size: 15px;
     font-weight: bold;
     text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+
+    text-align: center;
 }
 
 .selected {
@@ -195,7 +197,7 @@ body {
     margin-top: 32px;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 15px;
 }
 
@@ -248,4 +250,36 @@ footer {
 footer .copyright {
     color: #5e5e5e;
     font-size: 11px;
+}
+
+@media screen and (max-width: 680px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .type p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        padding: 13px;
+    }
+    .about-txt {
+        font-size: 13px;
+    }
+
+    .projects-list {
+        gap: 25px;
+    }
+
+    .type p{
+        font-size: 14px;
+    }
+
+    .projects {
+        min-height: 600px;
+    }
 }
