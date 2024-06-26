@@ -9,11 +9,17 @@ async function render_projects(find) {
         return res.json();
     })
 
-    if(find == undefined) {
-        find = "General"
+    const filteredProjects = projects.filter((p) => p.type.includes(find));
+
+    if(filteredProjects.length == 0) {
+        const p = document.createElement("p");
+        p.classList.add("nothing");
+        p.innerText = "Nothing here yet.";
+        projects_list.appendChild(p);
+        return;
     }
 
-    projects.filter((p) => p.type.includes(find)).map((p) => {
+    filteredProjects.map((p) => {
         const li = document.createElement("li");
         li.classList.add("project");
 
@@ -25,7 +31,8 @@ async function render_projects(find) {
         img.src = p.image;
 
         const pType = document.createElement("p");
-        pType.innerText = p.type;
+        pType.innerText = p.type[0];
+        pType.innerText += p.type[1] != "General" ? `, ${p.type[1]}` : "";
         pType.classList.add("project-type");
 
         const pTitle = document.createElement("p");
@@ -44,7 +51,7 @@ async function render_projects(find) {
         projects_list.appendChild(li);
     })
 
-}
+}   
 
 function clear_render() {
     projects_list.innerHTML = "";
@@ -64,7 +71,7 @@ general.addEventListener("click", () => {
 backend_frontend.addEventListener("click", () => {
     clear_render();
     backend_frontend.classList.add("selected");
-    render_projects("General");
+    render_projects("Frontend");
 });
 
 machine_learning.addEventListener("click", () => {
