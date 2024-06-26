@@ -4,7 +4,7 @@
     --white: #ffffff;
     --gray: #a1a1aa;
     --txt: #D4D4D4;
-    --line: #2b2b2b;
+    --line: #27272a;
     --primary: #4287f5;
 }
 
@@ -115,7 +115,7 @@ body {
 
 .about-txt {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 21.5px;
     color: var(--txt);
 }
 
@@ -154,19 +154,19 @@ body {
 }
 
 .general {
-    background-image: url("../images/04.jpg");
+    background-image: url("../images/01.jpg");
 }
 
 .backend-frontend {
-    background-image: url("../images/03.png");
-}
-
-.machine-learning {
     background-image: url("../images/02.jpg");
 }
 
+.machine-learning {
+    background-image: url("../images/03.jpg");
+}
+
 .graphics {
-    background-image: url("../images/01.jpg");
+    background-image: url("../images/04.jpg");
 }
 
 .type::after {
@@ -181,7 +181,7 @@ body {
 .type p {
     z-index: 2;
     color: var(--white);
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: bold;
     text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
 
@@ -227,7 +227,7 @@ body {
 }
 
 .project-about {
-    font-size: 11.4px;
+    font-size: 11.7px;
     color: var(--gray);
     line-height: 16px;
     max-width: 250px;
@@ -304,3 +304,5 @@ footer .copyright {
         min-height: 210px;
     }
 }
+
+/* Copyright (C)  Rodrigo Cabral (rodcabral) */
