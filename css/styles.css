@@ -289,6 +289,10 @@ footer .copyright {
     .projects {
         min-height: 600px;
     }
+
+    .type {
+        background-position: center;
+    }
 }
 
 @media screen and (max-width: 400px) {
