@@ -25,6 +25,7 @@ async function render_projects(find) {
 
         const a = document.createElement("a");
         a.href = p.link;
+        a.target = "_blank";
         li.appendChild(a);
 
         const img = document.createElement("img");
