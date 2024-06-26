@@ -88,3 +88,6 @@ graphics.addEventListener("click", () => {
 });
 
 render_projects("General");
+
+
+// Copyright (C)  Rodrigo Cabral (rodcabral)
