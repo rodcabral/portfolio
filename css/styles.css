@@ -1,5 +1,4 @@
 :root {
-    /* --bg: rgb(17, 16, 16); */
     --bg: rgb(12, 11, 11);
     --white: #ffffff;
     --gray: #a1a1aa;
@@ -23,7 +22,8 @@ body {
     align-items: center;
     background-color: var(--bg);
 
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Inter", sans-serif; 
 }
 
 .container {
@@ -114,7 +114,7 @@ body {
 }
 
 .about-txt {
-    font-size: 14px;
+    font-size: 13.3px;
     line-height: 21.5px;
     color: var(--txt);
 }
@@ -158,6 +158,7 @@ body {
 }
 
 .backend-frontend {
+
     background-image: url("../images/02.jpg");
 }
 
@@ -181,7 +182,7 @@ body {
 .type p {
     z-index: 2;
     color: var(--white);
-    font-size: 14.5px;
+    font-size: 13.6px;
     font-weight: bold;
     text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
 
@@ -222,12 +223,13 @@ body {
 
 .project-title {
     font-size: 14px;
+
     font-weight: bold;
     color: var(--white);
 }
 
 .project-about {
-    font-size: 11.7px;
+    font-size: 11.3px;
     color: var(--gray);
     line-height: 16px;
     max-width: 250px;
@@ -235,7 +237,7 @@ body {
 
 .nothing {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
 }
 
@@ -249,7 +251,7 @@ footer {
 
 footer .copyright {
     color: #5e5e5e;
-    font-size: 11px;
+    font-size: 10.5px;
 }
 
 @media screen and (max-width: 680px) {
@@ -259,7 +261,7 @@ footer .copyright {
     }
 
     .type p {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -269,7 +271,7 @@ footer .copyright {
     }
     
     .about-txt {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .projects-list {
@@ -283,7 +285,7 @@ footer .copyright {
     }
 
     .type p{
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .projects {
