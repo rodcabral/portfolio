@@ -6,18 +6,18 @@
         "image": "images/projects/gamestore.png",
         "link": "https://github.com/rodcabral/gamestore"
     },
-    {
-        "title": "Sort Visualizer",
-        "about": "Program made in C with SDL to visualize different sorting algorithms.",
-        "type": ["Systems", "General"],
-        "image": "images/projects/sort.png",
-        "link": "https://github.com/rodcabral/sort/"
-    },
     {    
         "title": "Game Of Life",
         "about": "C implementation of Conway's game of life, a cellular automaton.",
         "type": ["Simulation", "General"],
         "image": "images/projects/game.gif",
         "link": "https://github.com/rodcabral/game-of-life/"
+    },
+    {
+        "title": "Sort Visualizer",
+        "about": "Program made in C with SDL to visualize different sorting algorithms.",
+        "type": ["Systems", "General"],
+        "image": "images/projects/sort.png",
+        "link": "https://github.com/rodcabral/sort/"
     }
 ]
