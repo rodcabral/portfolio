@@ -2,7 +2,7 @@
     --bg: rgb(12, 11, 11);
     --white: #ffffff;
     --gray: #a1a1aa;
-    --txt: #D4D4D4;
+    --txt: #e0e0e0;
     --line: #27272a;
     --primary: #4287f5;
 }
@@ -238,6 +238,31 @@ body {
     color: #ffffff;
     font-size: 15px;
     font-weight: 300;
+}
+
+/* Post */
+.post-title {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.post-subtitle {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.paragraph {
+    font-size: 14.5px;
+    line-height: 22px;
+    color: var(--txt);
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 footer {
