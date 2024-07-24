@@ -267,6 +267,10 @@ body {
     margin-top: 10px;
 }
 
+.post img {
+    margin-top: 10px;
+}
+
 footer {
     display: flex;
     width: 100%;
