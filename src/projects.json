@@ -6,6 +6,13 @@
         "image": "images/projects/gamestore.png",
         "link": "https://github.com/rodcabral/gamestore"
     },
+    {
+        "title": "Fintech Home Screen",
+        "about": "Home screen of a fintech app made using React Native with Typescript.",
+        "type": ["Mobile", "General"],
+        "image": "images/projects/fintech.png",
+        "link": "https://github.com/rodcabral/fintech-app"
+    },
     {    
         "title": "Game Of Life",
         "about": "C implementation of Conway's game of life, a cellular automaton.",
