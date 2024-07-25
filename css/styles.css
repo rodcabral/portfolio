@@ -295,11 +295,15 @@ footer .copyright {
     }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 680px) {
     .container {
         padding: 13px;
     }
     
+    .projects-list {
+        justify-content: center;
+    }
+
     .about-txt {
         font-size: 12px;
     }
@@ -328,9 +332,6 @@ footer .copyright {
 }
 
 @media screen and (max-width: 400px) {
-    .projects-list {
-        justify-content: center;
-    }
     .project {
         width: 100%;
         min-height: 210px;
