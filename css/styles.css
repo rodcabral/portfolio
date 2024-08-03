@@ -282,6 +282,7 @@ footer {
 footer .copyright {
     color: #5e5e5e;
     font-size: 10.5px;
+    text-align: center;
 }
 
 @media screen and (max-width: 680px) {
