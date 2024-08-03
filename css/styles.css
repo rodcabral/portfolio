@@ -126,7 +126,7 @@ body {
     flex-direction: column;
     border-bottom: 1px solid var(--line);
     padding-bottom: 8px;
-    min-height: 400px;
+    min-height: 600px;
 }
 
 .projects-type-list {
