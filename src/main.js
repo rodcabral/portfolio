@@ -1,3 +1,5 @@
+// Copyright (C)  Rodrigo Cabral (rodcabral)
+
 const projects_list = document.querySelector(".projects-list");
 const general = document.querySelector(".general");
 const backend_frontend = document.querySelector(".backend-frontend");
@@ -88,6 +90,5 @@ graphics.addEventListener("click", () => {
 });
 
 render_projects("General");
-
 
 // Copyright (C)  Rodrigo Cabral (rodcabral)
