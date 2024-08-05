@@ -38,7 +38,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.fillStyle = "#111111";
+    ctx.fillStyle = "#222222";
     ctx.arc(ball_x, ball_y, ball_radius, 10, 0, true);
     ctx.fill();
     ctx.closePath();
@@ -49,6 +49,7 @@ function main() {
     draw();
 
     ball_x += direction_x;
+    ball_y += direction_y;
 
     if(ball_x >= canvas.width - ball_radius) {
         direction_x -= 2;
@@ -56,6 +57,14 @@ function main() {
 
     if(ball_x <= 0 + ball_radius) {
         direction_x += 2;
+    }
+
+    if(ball_y >= canvas.height - ball_radius) {
+        direction_y -= 2;
+    }
+
+    if(ball_y <= 0 + ball_radius) {
+        direction_y += 2;
     }
 }
 
