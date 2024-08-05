@@ -1,28 +1,64 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
 
-const canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
+// GRID
+const c_grid = document.querySelector(".grid");
+const ctx_grid = c_grid.getContext("2d");
 
-ctx.fillStyle = "#ffffff";
-ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+function render_grid() {
+    let show_grid = true;
+    let gap = 0;
+    let w = 15;
+    let h = 15;
 
-let show_grid = true;
-let gap = 0;
-let w = 15;
-let h = 15;
+    ctx_grid.fillStyle = "#ffffff";
+    ctx_grid.fillRect(0, 0, c_grid.clientWidth, c_grid.clientHeight);
 
-if(show_grid) {
-    for(let i = 0; i < canvas.clientHeight; ++i) {
-        for(let j = 0; j < canvas.clientWidth; ++j) {
-            ctx.strokeStyle = "#e0e0e0";
-            ctx.strokeRect(j * (w+gap), i * (h+gap), w, h);
-            ctx.stroke();
+    if(show_grid) {
+        for(let i = 0; i < c_grid.clientHeight; ++i) {
+            for(let j = 0; j < c_grid.clientWidth; ++j) {
+                ctx_grid.strokeStyle = "#e0e0e0";
+                ctx_grid.strokeRect(j * (w+gap), i * (h+gap), w, h);
+                ctx_grid.stroke();
+            }
         }
     }
 }
 
-ctx.fillStyle = "#111111";
-ctx.arc(40, 40, 15, 10, 0, true);
-ctx.fill();
+// MAIN
+const canvas = document.querySelector(".canvas");
+const ctx = canvas.getContext("2d");
+
+let ball_radius = 15;
+let ball_x = ball_radius + 2;
+let ball_y = ball_radius + 2;
+let direction_x = 2;
+let direction_y = 2;
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.fillStyle = "#111111";
+    ctx.arc(ball_x, ball_y, ball_radius, 10, 0, true);
+    ctx.fill();
+    ctx.closePath();
+}
+
+render_grid();
+function main() {
+    draw();
+
+    ball_x += direction_x;
+
+    if(ball_x >= canvas.width - ball_radius) {
+        direction_x -= 2;
+    }
+
+    if(ball_x <= 0 + ball_radius) {
+        direction_x += 2;
+    }
+}
+
+setInterval(main, 10);
 
 // Copyright (C)  Rodrigo Cabral (rodcabral)

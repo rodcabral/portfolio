@@ -101,9 +101,23 @@ body {
     border-radius: 10px;
 } */
 
-.canvas {
-    border-radius: 10px;
+.canvas-container {
     margin-top: 32px;
+    width: 640px;
+    height: 200px;
+    position: relative;
+}
+
+.grid {
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.canvas {
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 .title {
