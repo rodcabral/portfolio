@@ -1,8 +1,10 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
 
-// GRID
 const c_grid = document.querySelector(".grid");
 const ctx_grid = c_grid.getContext("2d");
+
+const canvas = document.querySelector(".canvas");
+const ctx = canvas.getContext("2d");
 
 function render_grid() {
     let show_grid = true;
@@ -24,20 +26,19 @@ function render_grid() {
     }
 }
 
-// MAIN
-const canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
-
-let ball_radius = 15;
-let ball_x = ball_radius + 2;
-let ball_y = ball_radius + 2;
-let direction_x = 2;
-let direction_y = 2;
+const radius = 15;
+let arc = {
+    radius: radius,
+    x: radius + 2,
+    y: radius + 2,
+    directionX: 2,
+    directionY: 2
+};
 
 function draw() {
     ctx.beginPath();
     ctx.fillStyle = "#222222";
-    ctx.arc(ball_x, ball_y, ball_radius, 10, 0, true);
+    ctx.arc(arc.x, arc.y, arc.radius, 10, 0, true);
     ctx.fill();
     ctx.closePath();
 }
@@ -48,23 +49,23 @@ function main() {
 
     draw();
 
-    ball_x += direction_x;
-    ball_y += direction_y;
+    arc.x += arc.directionX;
+    arc.y += arc.directionY;
 
-    if(ball_x >= canvas.width - ball_radius) {
-        direction_x -= 2;
+    if(arc.x >= canvas.width - arc.radius) {
+        arc.directionX -= 2;
     }
 
-    if(ball_x <= 0 + ball_radius) {
-        direction_x += 2;
+    if(arc.x <= 0 + arc.radius) {
+        arc.directionX += 2;
     }
 
-    if(ball_y >= canvas.height - ball_radius) {
-        direction_y -= 2;
+    if(arc.y >= canvas.height - arc.radius) {
+        arc.directionY -= 2;
     }
 
-    if(ball_y <= 0 + ball_radius) {
-        direction_y += 2;
+    if(arc.y <= 0 + arc.radius) {
+        arc.directionY += 2;
     }
 
     window.requestAnimationFrame(main);
