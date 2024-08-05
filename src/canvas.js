@@ -35,8 +35,6 @@ let direction_x = 2;
 let direction_y = 2;
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     ctx.beginPath();
     ctx.fillStyle = "#222222";
     ctx.arc(ball_x, ball_y, ball_radius, 10, 0, true);
@@ -46,6 +44,8 @@ function draw() {
 
 render_grid();
 function main() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     draw();
 
     ball_x += direction_x;
@@ -66,8 +66,10 @@ function main() {
     if(ball_y <= 0 + ball_radius) {
         direction_y += 2;
     }
+
+    window.requestAnimationFrame(main);
 }
 
-setInterval(main, 10);
+window.requestAnimationFrame(main);
 
 // Copyright (C)  Rodrigo Cabral (rodcabral)
