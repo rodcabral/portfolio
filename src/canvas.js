@@ -1,5 +1,7 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
 
+const ARCS_SIZE = 1
+
 const c_grid = document.querySelector(".grid");
 const ctx_grid = c_grid.getContext("2d");
 
@@ -26,21 +28,31 @@ function render_grid() {
     }
 }
 
-const radius = 15;
-let arc = {
-    radius: radius,
-    x: radius + 2,
-    y: radius + 2,
-    directionX: 2,
-    directionY: 2
+class Arc {
+    constructor(radius, x, y, dx, dy, color) {
+        this.radius = radius,
+        this.x = radius + x,
+        this.y = radius + y,
+        this.directionX = dx,
+        this.directionY = dy,
+        this.color = color
+    }
 };
 
+const radius = 15;
+let arcs = [];
+for(let i = 0; i < ARCS_SIZE; ++i) {
+    arcs.push(new Arc(radius, Math.floor(Math.random() * canvas.width), Math.floor(Math.random() * canvas.height), 2, 2, "#111111"));
+}
+
 function draw() {
-    ctx.beginPath();
-    ctx.fillStyle = "#222222";
-    ctx.arc(arc.x, arc.y, arc.radius, 10, 0, true);
-    ctx.fill();
-    ctx.closePath();
+    for(let i = 0; i < arcs.length; ++i) {
+        ctx.beginPath();
+        ctx.fillStyle = arcs[i].color;
+        ctx.arc(arcs[i].x, arcs[i].y, arcs[i].radius, 10, 0, true);
+        ctx.fill();
+        ctx.closePath();
+    }
 }
 
 render_grid();
@@ -49,23 +61,25 @@ function main() {
 
     draw();
 
-    arc.x += arc.directionX;
-    arc.y += arc.directionY;
+    for(let i = 0; i < arcs.length; ++i) {
+        arcs[i].x += arcs[i].directionX;
+        arcs[i].y += arcs[i].directionY;
 
-    if(arc.x >= canvas.width - arc.radius) {
-        arc.directionX -= 2;
-    }
+        if(arcs[i].x >= canvas.width - arcs[i].radius) {
+            arcs[i].directionX -= 1;
+        }
 
-    if(arc.x <= 0 + arc.radius) {
-        arc.directionX += 2;
-    }
+        if(arcs[i].x <= 0 + arcs[i].radius) {
+            arcs[i].directionX += 1;
+        }
 
-    if(arc.y >= canvas.height - arc.radius) {
-        arc.directionY -= 2;
-    }
+        if(arcs[i].y >= canvas.height - arcs[i].radius) {
+            arcs[i].directionY -= 1;
+        }
 
-    if(arc.y <= 0 + arc.radius) {
-        arc.directionY += 2;
+        if(arcs[i].y <= 0 + arcs[i].radius) {
+            arcs[i].directionY += 1;
+        }
     }
 
     window.requestAnimationFrame(main);
