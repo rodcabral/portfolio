@@ -13,13 +13,6 @@
         "image": "images/projects/fintech.png",
         "link": "https://github.com/rodcabral/fintech-app"
     },
-    {    
-        "title": "Game Of Life",
-        "about": "C implementation of Conway's game of life, a cellular automaton.",
-        "type": ["Simulation", "General"],
-        "image": "images/projects/game.gif",
-        "link": "https://github.com/rodcabral/game-of-life/"
-    },
     {
         "title": "Sort Visualizer",
         "about": "Program made in C with SDL to visualize different sorting algorithms.",
