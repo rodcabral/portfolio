@@ -1,7 +1,5 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
 
-const ARCS_SIZE = 1
-
 const c_grid = document.querySelector(".grid");
 const ctx_grid = c_grid.getContext("2d");
 
@@ -39,47 +37,43 @@ class Arc {
     }
 };
 
-const radius = 15;
 let arcs = [];
-for(let i = 0; i < ARCS_SIZE; ++i) {
-    arcs.push(new Arc(radius, Math.floor(Math.random() * canvas.width), Math.floor(Math.random() * canvas.height), 2, 2, "#111111"));
-}
+arcs.push(new Arc(15, 0, 0, 2, 2, "#111111"));
 
 function draw() {
-    for(let i = 0; i < arcs.length; ++i) {
-        ctx.beginPath();
-        ctx.fillStyle = arcs[i].color;
-        ctx.arc(arcs[i].x, arcs[i].y, arcs[i].radius, 10, 0, true);
-        ctx.fill();
-        ctx.closePath();
-    }
+    const i = 0;
+
+    ctx.beginPath();
+    ctx.fillStyle = arcs[i].color;
+    ctx.arc(arcs[i].x, arcs[i].y, arcs[i].radius, 10, 0, true);
+    ctx.fill();
+    ctx.closePath();
 }
 
 render_grid();
 function main() {
+    const i = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     draw();
+    
+    arcs[i].x += arcs[i].directionX;
+    arcs[i].y += arcs[i].directionY;
 
-    for(let i = 0; i < arcs.length; ++i) {
-        arcs[i].x += arcs[i].directionX;
-        arcs[i].y += arcs[i].directionY;
+    if(arcs[i].x >= canvas.width - arcs[i].radius) {
+        arcs[i].directionX -= 2;
+    }
 
-        if(arcs[i].x >= canvas.width - arcs[i].radius) {
-            arcs[i].directionX -= 1;
-        }
+    if(arcs[i].x <= 0 + arcs[i].radius) {
+        arcs[i].directionX += 2;
+    }
 
-        if(arcs[i].x <= 0 + arcs[i].radius) {
-            arcs[i].directionX += 1;
-        }
+    if(arcs[i].y >= canvas.height - arcs[i].radius) {
+        arcs[i].directionY -= 2;
+    }
 
-        if(arcs[i].y >= canvas.height - arcs[i].radius) {
-            arcs[i].directionY -= 1;
-        }
-
-        if(arcs[i].y <= 0 + arcs[i].radius) {
-            arcs[i].directionY += 1;
-        }
+    if(arcs[i].y <= 0 + arcs[i].radius) {
+        arcs[i].directionY += 2;
     }
 
     window.requestAnimationFrame(main);
