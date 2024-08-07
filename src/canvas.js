@@ -1,11 +1,30 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
 
+const container = document.querySelector(".canvas-container");
+
 const c_grid = document.querySelector(".grid");
 const ctx_grid = c_grid.getContext("2d");
 
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
 
+let changedMobile = false;
+let changedDesktop = false;
+
+class Arc {
+    constructor(radius, x, y, dx, dy, color) {
+        this.radius = radius,
+        this.x = radius + x,
+        this.y = radius + y,
+        this.directionX = dx,
+        this.directionY = dy,
+        this.color = color
+    }
+};
+
+let arcs = [];
+arcs.push(new Arc(15, 0, 0, 2, 2, "#111111"));
+    
 function render_grid() {
     let show_grid = true;
     let gap = 0;
@@ -26,20 +45,6 @@ function render_grid() {
     }
 }
 
-class Arc {
-    constructor(radius, x, y, dx, dy, color) {
-        this.radius = radius,
-        this.x = radius + x,
-        this.y = radius + y,
-        this.directionX = dx,
-        this.directionY = dy,
-        this.color = color
-    }
-};
-
-let arcs = [];
-arcs.push(new Arc(15, 0, 0, 2, 2, "#111111"));
-
 function draw() {
     const i = 0;
 
@@ -50,7 +55,40 @@ function draw() {
     ctx.closePath();
 }
 
-render_grid();
+function mobile() {
+    ctx_grid.clearRect(0, 0, c_grid.width, c_grid.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    c_grid.width = 300;
+    c_grid.height = 200;
+    canvas.width = 300;
+    canvas.height = 200;
+    render_grid();
+}
+
+function desktop() {
+    ctx_grid.clearRect(0, 0, c_grid.width, c_grid.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    c_grid.width = 640;
+    c_grid.height = 200;
+    canvas.width = 640;
+    canvas.height = 200;
+    render_grid();
+}
+
+function detect_device(innerWidth) {
+    if(innerWidth <= 800 && !changedMobile) {
+        mobile();
+        changedMobile = true;
+        changedDesktop = false;
+    }
+
+    if(innerWidth > 800 && !changedDesktop) {
+        desktop();
+        changedDesktop = true;
+        changedMobile = false;
+    }
+}
+
 function main() {
     const i = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -75,6 +113,8 @@ function main() {
     if(arcs[i].y <= 0 + arcs[i].radius) {
         arcs[i].directionY += 2;
     }
+
+    detect_device(window.innerWidth);
 
     window.requestAnimationFrame(main);
 }
