@@ -1,5 +1,4 @@
 // Copyright (C)  Rodrigo Cabral (rodcabral)
-
 const container = document.querySelector(".canvas-container");
 
 const c_grid = document.querySelector(".grid");
@@ -120,5 +119,4 @@ function main() {
 }
 
 window.requestAnimationFrame(main);
-
 // Copyright (C)  Rodrigo Cabral (rodcabral)

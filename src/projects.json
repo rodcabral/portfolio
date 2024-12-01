@@ -1,23 +1,23 @@
 [
     {
-        "title": "Gamestore",
-        "about": "Fictitious game store app made using React Native with Typescript.",
-        "type": ["Mobile", "General"],
-        "image": "images/projects/gamestore.png",
-        "link": "https://github.com/rodcabral/gamestore"
-    },
-    {
-        "title": "Fintech Home Screen",
-        "about": "Home screen of a fintech app made using React Native with Typescript.",
-        "type": ["Mobile", "General"],
-        "image": "images/projects/fintech.png",
-        "link": "https://github.com/rodcabral/fintech-app"
+        "title": "HTTP Library",
+        "about": "Header-only library to create multi-threaded HTTP servers using C.",
+        "type": ["Systems", "General"],
+        "image": "images/projects/ultra-http.png",
+        "link": "https://github.com/rodcabral/ultra-http/"
     },
     {
         "title": "Sort Visualizer",
-        "about": "Program made in C with SDL to visualize different sorting algorithms.",
+        "about": "Program written in C to visualize the process of sorting algorithms.",
         "type": ["Systems", "General"],
         "image": "images/projects/sort.png",
         "link": "https://github.com/rodcabral/sort/"
+    },
+    {
+        "title": "Gamestore",
+        "about": "Fictitious Game Store app made with React Native and Typescript.",
+        "type": ["Mobile", "General"],
+        "image": "images/projects/gamestore.png",
+        "link": "https://github.com/rodcabral/gamestore"
     }
 ]
